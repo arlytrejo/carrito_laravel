@@ -16,7 +16,8 @@ class ProductsController extends Controller
 
     public function cart()
     {
-        return view('cart');
+        $cart = session()->get('cart');
+        return view('cart', compact('cart'));
     }
     public function addToCart($id)
     {
@@ -147,4 +148,10 @@ class ProductsController extends Controller
 
         return number_format($total, 2);
     }
+
+    public function checkout(){
+        $cart = session()->get('cart');
+        return response()->json(compact('cart'));
+    }
 }
+ 

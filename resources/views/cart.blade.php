@@ -57,6 +57,8 @@
             <td><a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
             <td colspan="2" class="hidden-xs"></td>
             <td class="hidden-xs text-center"><strong>Total $<span class="cart-total">{{ $total }}</span></strong></td>
+
+        <td><button onclick="check()" class="btn btn-sm btn-success check">Checkout</button></td>
         </tr>
         </tfoot>
     </table>
@@ -67,7 +69,8 @@
 
 
     <script type="text/javascript">
-
+        let cart = document.body
+        console.log(cart)
         $(".update-cart").click(function (e) {
             e.preventDefault();
 
